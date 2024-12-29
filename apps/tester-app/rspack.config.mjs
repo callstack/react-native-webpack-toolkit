@@ -74,7 +74,7 @@ export default (env) => {
                 transform: {
                   react: {
                     runtime: 'automatic',
-                    importSource: 'react-native-css-interop',
+                    importSource: 'nativewind',
                   },
                 },
               },
@@ -158,7 +158,6 @@ export default (env) => {
         },
       ],
     },
-
     plugins: [
       /**
        * Configure other required and additional plugins to make the bundle
@@ -203,9 +202,5 @@ export default (env) => {
         input: './src/nativewind/global.css',
       }),
     ].filter(Boolean),
-
-    experiments: {
-      css: true,
-    },
   };
 };
