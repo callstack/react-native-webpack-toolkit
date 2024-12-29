@@ -39,6 +39,7 @@ export const REACT_NATIVE_LOADING_RULES: RuleSetRule = {
           transform: {
             react: {
               runtime: 'automatic',
+              importSource: 'nativewind',
             },
           },
         },

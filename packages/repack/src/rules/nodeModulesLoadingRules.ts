@@ -17,7 +17,7 @@ const makeSwcLoaderConfig = (syntax: 'js' | 'ts', jsx: boolean) => ({
       transform: {
         react: {
           runtime: 'automatic',
-          importSource: 'react-native-css-interop', // ? 'nativewind',
+          importSource: 'nativewind',
         },
       },
     },
