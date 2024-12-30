@@ -65,6 +65,8 @@ export default (env) => {
             /** @type {import('@rspack/core').SwcLoaderOptions} */
             options: {
               env: {
+                loose: true,
+                bugfixes: true,
                 targets: {
                   'react-native': '0.74',
                 },
@@ -198,9 +200,7 @@ export default (env) => {
       // }),
       process.env.RSDOCTOR && new RsdoctorRspackPlugin(),
       new ReanimatedPlugin(),
-      new NativeWindPlugin({
-        input: './src/nativewind/global.css',
-      }),
+      new NativeWindPlugin(),
     ].filter(Boolean),
   };
 };

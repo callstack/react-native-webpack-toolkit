@@ -5,6 +5,9 @@ const makeSwcLoaderConfig = (syntax: 'js' | 'ts', jsx: boolean) => ({
   loader: 'builtin:swc-loader',
   options: {
     env: {
+      // TODO add this in a separate PR
+      loose: true,
+      bugfixes: true,
       targets: { 'react-native': '0.74' },
     },
     jsc: {
@@ -17,6 +20,7 @@ const makeSwcLoaderConfig = (syntax: 'js' | 'ts', jsx: boolean) => ({
       transform: {
         react: {
           runtime: 'automatic',
+          // TODO make this configurable
           importSource: 'nativewind',
         },
       },
@@ -25,6 +29,8 @@ const makeSwcLoaderConfig = (syntax: 'js' | 'ts', jsx: boolean) => ({
       type: 'commonjs',
       strict: false,
       strictMode: false,
+      // TODO add this in a separate PR
+      noInterop: false,
     },
   },
 });

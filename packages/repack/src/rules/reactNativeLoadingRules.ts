@@ -23,6 +23,9 @@ export const REACT_NATIVE_LOADING_RULES: RuleSetRule = {
       loader: 'builtin:swc-loader',
       options: {
         env: {
+          // TODO add this in a separate PR
+          loose: true,
+          bugfixes: true,
           targets: { 'react-native': '0.74' },
         },
         jsc: {
@@ -39,6 +42,7 @@ export const REACT_NATIVE_LOADING_RULES: RuleSetRule = {
           transform: {
             react: {
               runtime: 'automatic',
+              // TODO make this configurable
               importSource: 'nativewind',
             },
           },
@@ -48,6 +52,8 @@ export const REACT_NATIVE_LOADING_RULES: RuleSetRule = {
           strict: false,
           strictMode: false,
           lazy: REACT_NATIVE_LAZY_IMPORTS,
+          // TODO add this in a separate PR
+          noInterop: false,
         },
       },
     },
